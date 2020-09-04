@@ -1,0 +1,50 @@
+
+{% extends 'portfolio/base.html'%}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <div class="container-fluid" align="center" style="padding-top: 25px; padding-bottom: 100px; background-color: #ffffc0;">
+
+		{% load static %}
+		<div style="background-image: url('portfolio-background.jpg');">
+		<img src="{% static 'portfolio/insta-1.jpg'%}">
+		<br><br>
+		<h1 style="font-family: 'Cedarville Cursive', cursive;"> Shweta's Portfolio</h1><br><br>
+		</div>
+		
+		<h2 class="mt-5" style="font-family: 'Julius Sans One', sans-serif;">Projects</h2>
+		<hr>
+		
+		<div class="album py-5">
+	    <div class="container" style="background-color: #ffffc0;">
+	
+	      <div class="row">
+	      {% for project in projects %}
+	        <div class="col-md-4">
+	          <div class="card mb-4 shadow-sm">
+	            {% if project.url%}
+				<a href="{{project.url}}">
+					<img src="{{project.image.url}}" class="img-fluid mb-2">
+				</a>
+				{% else %}
+				<img src="{{project.image.url}}" class="img-fluid mb-2">
+				{% endif%}
+	            <div class="card-body">
+	              <h3 class="card-text" style="font-family: 'Merriweather Sans', sans-serif;">{{project.title}}</h3>
+	              <p class="card-text" style="font-family: 'Tajawal', sans-serif;">{{project.description}}</p>
+	            </div>
+	          </div>
+	        </div>
+	        {% endfor %}
+	     </div>
+	     </div>
+	  </div>
+	</div>
+	       
+		
+		
+    
+{% endblock %}
+    

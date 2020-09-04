@@ -1,0 +1,16 @@
+{% extends 'portfolio/base.html'%}
+{% block content %}
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+	
+<div class="container" style="padding-top: 50px; padding-bottom: 100px;">
+	<h1 align="center" style="font-family: 'Montserrat', sans-serif;">{{ blog.title }} </h1><br>
+	<h3 align="center" style="font-family: 'Tajawal', sans-serif;"> {{ blog.date }} </h3><br>
+	<p align="center" style="font-family: 'Tajawal', sans-serif;"> {{blog.description|safe}} </p>
+</div>
+
+{% endblock %}
